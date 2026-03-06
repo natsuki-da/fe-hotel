@@ -1,9 +1,10 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import RoomCardLeft from "../Card/RoomCardLeft"
 import RoomCardRight from "../Card/RoomCardRight"
 import { getAllRooms } from "../../../api/roomApi"
 
 const RoomList = () => {
+    const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
         fetchAllRooms();
