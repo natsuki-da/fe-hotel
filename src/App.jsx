@@ -1,8 +1,10 @@
+import RoomList from "./components/Room/List/RoomList"
+
 function App() {
 
   return (
     <>
-      <div>Hello</div>
+      <RoomList />
     </>
   )
 }

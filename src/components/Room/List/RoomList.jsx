@@ -1,0 +1,33 @@
+import { useEffect } from "react"
+import RoomCardLeft from "../RoomCard/RoomCardLeft"
+import RoomCardRight from "../RoomCard/RoomCardRight"
+import { getAllRooms } from "../../api/bookingApi";
+
+const RoomList = () => {
+
+    useEffect(() => {
+        fetchAllRooms();
+    }, [])
+
+    // const fetchAllRooms = async () => {
+    //     const response = await getAllRooms();
+    //     setRooms(response.data);
+    // }
+    async function fetchAllRooms () {
+        const response = await getAllRooms();
+        setRooms(response.data);
+    }
+    return (
+        <>
+            {
+                rooms.map((room, index) => (
+                    index % 2 === 0
+                        ? <RoomCardRight key={room.roomId} room={room} />
+                        : <RoomCardLeft key={room.roomId} room={room} />
+                ))
+            }
+        </>
+    )
+}
+
+export default RoomList;
