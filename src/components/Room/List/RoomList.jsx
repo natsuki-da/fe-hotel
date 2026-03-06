@@ -1,7 +1,7 @@
 import { useEffect } from "react"
-import RoomCardLeft from "../RoomCard/RoomCardLeft"
-import RoomCardRight from "../RoomCard/RoomCardRight"
-import { getAllRooms } from "../../api/bookingApi";
+import RoomCardLeft from "../Card/RoomCardLeft"
+import RoomCardRight from "../Card/RoomCardRight"
+import { getAllRooms } from "../../../api/roomApi"
 
 const RoomList = () => {
 
