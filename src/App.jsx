@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/room-list" element={<RoomList />} />
-          <Route path="/room/`${roomId}`" element={<RoomDetail />} />
+          <Route path="/room/:roomId" element={<RoomDetail />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
