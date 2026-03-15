@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import * as S from "./RoomDetail.styles"
 import { useParams } from "react-router-dom";
 import { getRoomById } from "../../../api/roomApi";
+import { useAuth } from "../../../context/useAuth";
 
 
 const RoomDetail = () => {
-    const [room, setRoom] = useState();
+    const { room, setRoom } = useAuth();
     const { roomId } = useParams();
+    
 
     useEffect(() => {
         const fetchRoomById = async () => {
