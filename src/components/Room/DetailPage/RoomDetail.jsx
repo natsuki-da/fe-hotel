@@ -1,6 +1,6 @@
 import { useEffect} from "react";
 import * as S from "./RoomDetail.styles"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getRoomById } from "../../../api/roomApi";
 import { useAuth } from "../../../context/useAuth";
 
@@ -8,7 +8,11 @@ import { useAuth } from "../../../context/useAuth";
 const RoomDetail = () => {
     const { room, setRoom } = useAuth();
     const { roomId } = useParams();
+    const navigate = useNavigate();
     
+    const handleClick = () => {
+        navigate(`/room/${roomId}/booking`)
+    }
 
     useEffect(() => {
         const fetchRoomById = async () => {
@@ -52,6 +56,7 @@ const RoomDetail = () => {
                         </S.Amenity_table>
                     </S.DescriptionContent>
                 </S.DescriptionSection>
+                <button onClick={handleClick}>BOOK</button>
             </S.RoomInfoWrapper>
         </S.Container>
     )
