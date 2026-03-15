@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import RoomCardLeft from "../Card/RoomCardLeft"
 import RoomCardRight from "../Card/RoomCardRight"
 import { getAllRooms } from "../../../api/roomApi"
+import { useAuth } from "../../../context/useAuth"
+import { Link } from "react-router-dom"
 
 const RoomList = () => {
-    const [rooms, setRooms] = useState([]);
-
+    const { rooms, setRooms } = useAuth();
     useEffect(() => {
         fetchAllRooms();
     }, [])
@@ -14,7 +15,7 @@ const RoomList = () => {
     //     const response = await getAllRooms();
     //     setRooms(response.data);
     // }
-    async function fetchAllRooms () {
+    async function fetchAllRooms() {
         const response = await getAllRooms();
         setRooms(response.data);
     }
@@ -22,9 +23,11 @@ const RoomList = () => {
         <>
             {
                 rooms.map((room, index) => (
-                    index % 2 === 0
-                        ? <RoomCardRight key={room.roomId} room={room} />
-                        : <RoomCardLeft key={room.roomId} room={room} />
+                    <Link to={`/room/${room.roomId}`} key={room.roomId}>
+                        {index % 2 === 0
+                        ? <RoomCardRight room={room} />
+                        : <RoomCardLeft room={room} />}
+                    </Link>
                 ))
             }
         </>
