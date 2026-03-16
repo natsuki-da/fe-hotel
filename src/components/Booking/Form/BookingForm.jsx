@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as S from "./BookingForm.styles"
 import { useAuth } from "../../../context/useAuth";
+import BookingCalendar from "../Calendar/BookingCalendar";
 
 const BookingForm = () => {
     const { room } = useAuth();

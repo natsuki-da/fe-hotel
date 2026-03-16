@@ -11,7 +11,7 @@ const RoomDetail = () => {
     const navigate = useNavigate();
     
     const handleClick = () => {
-        navigate(`/room/${roomId}/booking`)
+        navigate(`/room/${roomId}/availability`)
     }
 
     useEffect(() => {
