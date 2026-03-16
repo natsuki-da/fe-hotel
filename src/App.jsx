@@ -5,6 +5,7 @@ import RoomList from "./components/Room/List/RoomList"
 import { AuthProvider } from "./context/AuthProvider"
 import BookingForm from "./components/Booking/Form/BookingForm"
 import BookingCalendar from "./components/Booking/Calendar/BookingCalendar"
+import BookingPage from "./components/Booking/Booking/BookingPage"
 
 function App() {
 
@@ -15,10 +16,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/room-list" element={<RoomList />} />
           <Route path="/room/:roomId" element={<RoomDetail />} />
+          <Route path="/room/:roomId/booking" element={<BookingPage />} />
           {/* <Route path="calendar" element={<BookingCalendar />}/>
           <Route path="booking" element={<BookingForm />}/> */}
-          <Route path="room/:roomId/availability" element={<BookingCalendar />} />
-          <Route path="room/:roomId/booking" element={<BookingForm />}/>
+          {/* <Route path="room/:roomId/availability" element={<BookingCalendar />} />
+          <Route path="room/:roomId/booking" element={<BookingForm />}/> */}
         </Routes>
       </AuthProvider>
     </BrowserRouter>

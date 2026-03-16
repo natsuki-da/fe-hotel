@@ -3,7 +3,7 @@ import * as S from "./BookingForm.styles"
 import { useAuth } from "../../../context/useAuth";
 import BookingCalendar from "../Calendar/BookingCalendar";
 
-const BookingForm = () => {
+const BookingForm = ({onChange}) => {
     const { room } = useAuth();
     const [userInfo, setUserInfo] = useState({
         guestFirstName: "",
@@ -15,17 +15,11 @@ const BookingForm = () => {
 
     const handleUserInfo = (e) => {
         const { name, value } = e.target;
-        setUserInfo({ ...userInfo, [name]: value })
+        setUserInfo({ ...userInfo, [name]: value });
+        onChange({
+            [name]: value
+          });
     }
-   
-    const handleSubmit = () => {
-       localStorage.setItem("guest", JSON.stringify(userInfo))
-    }
-
-    const savedData = localStorage.getItem("guest");
-    const parsedData = JSON.parse(savedData);
-
-    console.log(parsedData);
 
     return (
         <S.Container>
@@ -38,7 +32,7 @@ const BookingForm = () => {
 
                     <S.GuestDetailContent>
                         <h2>Guest Information</h2>
-                        <S.GuestForm onClick={handleSubmit}>
+                        <S.GuestForm>
                             <S.InputField>
                                 <S.Label>First Name:</S.Label>
                                 <S.Input name="guestFirstName" value={userInfo.guestFirstName} type="text" onChange={handleUserInfo} />
@@ -59,9 +53,6 @@ const BookingForm = () => {
                                 <S.Label>Guests:</S.Label>
                                 <S.Input name="guestCount" value={userInfo.guestCount} type="number" min="1" onChange={handleUserInfo} />
                             </S.InputField>
-                            <S.ButtonContent>
-                                <S.Button>Continue to Review</S.Button>
-                            </S.ButtonContent>
                         </S.GuestForm>
                     </S.GuestDetailContent>
                 </S.GuestDetailsSection>

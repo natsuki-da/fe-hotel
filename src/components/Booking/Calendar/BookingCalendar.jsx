@@ -5,7 +5,7 @@ import * as S from "./BookingCalendar.styles"
 import { useAuth } from "../../../context/useAuth";
 import { api } from "../../../api/axiosInstance";
 
-const BookingCalendar = () => {
+const BookingCalendar = ({onDateChange}) => {
     const [range, setRange] = useState({ from: null, to: null });
     const [disabledDates, setDisabledDates] = useState([]);
     const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -38,6 +38,10 @@ const BookingCalendar = () => {
 
     const handleSelect = (range) => {
         setRange(range || { from: null, to: null });
+        onDateChange({
+            checkIn: range?.from,
+            checkOut: range?.to
+          });
     }
 
     const handleMonthChange = (month) => {
