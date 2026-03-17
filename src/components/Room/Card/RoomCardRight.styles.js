@@ -1,14 +1,18 @@
 import styled from "styled-components";
+import { Colors } from "../../../styles/Global.styles";
 
 export const CardContainer = styled.div`
   padding-left: 25%;
+  padding-bottom: 6rem;
+  overflow: hidden;
 `
 
 export const Card = styled.div`
   width: 100%;
   height: 25rem;
-  border: 0.2rem, solid;
+  //border: 0.2rem, solid;
   display: flex;
+  background-color: ${Colors.Secondary};
 `;
 
 export const Card_L = styled.div`
@@ -29,7 +33,6 @@ export const Description = styled.p`
 export const Card_R = styled.div`
  width: 60%;
  height: 100%;
- background-color: rgba(196, 132, 132, 0.8);
 `
 export const Image = styled.img`
  width: 100%;

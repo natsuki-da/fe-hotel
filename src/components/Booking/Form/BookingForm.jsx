@@ -35,23 +35,23 @@ const BookingForm = ({onChange}) => {
                         <S.GuestForm>
                             <S.InputField>
                                 <S.Label>First Name:</S.Label>
-                                <S.Input name="guestFirstName" value={userInfo.guestFirstName} type="text" onChange={handleUserInfo} />
+                                <S.Input name="guestFirstName" value={userInfo.guestFirstName} type="text" required onChange={handleUserInfo} />
                             </S.InputField>
                             <S.InputField>
                                 <S.Label>Last Name:</S.Label>
-                                <S.Input name="guestLastName" value={userInfo.guestLastName} type="text" onChange={handleUserInfo} />
+                                <S.Input name="guestLastName" value={userInfo.guestLastName} type="text" required onChange={handleUserInfo} />
                             </S.InputField>
                             <S.InputField>
                                 <S.Label>Telephone:</S.Label>
-                                <S.Input name="guestTelephoneNumber" value={userInfo.guestTelephoneNumber} type="text" onChange={handleUserInfo} />
+                                <S.Input name="guestTelephoneNumber" value={userInfo.guestTelephoneNumber} type="text" required onChange={handleUserInfo} />
                             </S.InputField>
                             <S.InputField>
                                 <S.Label>Email:</S.Label>
-                                <S.Input name="guestEmail" value={userInfo.guestEmail} type="email" onChange={handleUserInfo} />
+                                <S.Input name="guestEmail" value={userInfo.guestEmail} type="email" required onChange={handleUserInfo} />
                             </S.InputField>
                             <S.InputField>
                                 <S.Label>Guests:</S.Label>
-                                <S.Input name="guestCount" value={userInfo.guestCount} type="number" min="1" onChange={handleUserInfo} />
+                                <S.Input name="guestCount" value={userInfo.guestCount} type="number" min="1" required onChange={handleUserInfo} />
                             </S.InputField>
                         </S.GuestForm>
                     </S.GuestDetailContent>

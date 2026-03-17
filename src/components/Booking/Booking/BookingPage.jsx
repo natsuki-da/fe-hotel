@@ -33,11 +33,15 @@ const BookingPage = () => {
 
     return (
         <>
-            <BookingForm onChange={handleGuestInfo} />
-            <BookingCalendar onDateChange={handleDateChange} />
-            <S.ButtonContent>
-                <S.Button onClick={handleSubmit}>Continue to Review</S.Button>
-            </S.ButtonContent>
+            <S.Container>
+                <BookingForm onChange={handleGuestInfo} />
+                <BookingCalendar onDateChange={handleDateChange} />
+                <S.ButtonSection>
+                    <S.ButtonContainer>
+                        <S.Button onClick={handleSubmit}>Review Your Reservation</S.Button>
+                    </S.ButtonContainer>
+                </S.ButtonSection>
+            </S.Container>
         </>
     )
 }
