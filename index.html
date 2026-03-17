@@ -16,6 +16,11 @@
 </head>
 
 <body>
+  <script>
+    if (!window.location.hash) {
+      window.location.replace(window.location.pathname + '/#/');
+    }
+  </script>
   <div id="root"></div>
 </body>
 
