@@ -17,8 +17,8 @@ export const MenuContainer = styled.div`
   transform: translateX(100%);
   transition: transform 0.3s ease;
   
-  ${({ isOpen }) =>
-    isOpen &&
+   ${({ $isOpen }) =>
+    $isOpen &&
     `
     transform: translateX(0);
   `}
@@ -45,7 +45,7 @@ export const Menu = styled.div`
  
 export const Menu_Top = styled.div`
   width: 100%;
-  height: 10%;
+  height: 20%;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -62,14 +62,14 @@ export const Image = styled.img`
 `;
 
 export const Menu_Middle = styled.div`
-  height: 70%;
+  height: 60%;
 
 `; 
 
 export const MenuLinks = styled.div`
-  font-family: ${fonts.primary};
+  font-family: ${fonts.secondary};
   font-size: 1.5rem;
-  line-height: 4rem;
+  line-height: 3rem;
   height: 60%;
   display: flex;
   flex-direction: column;
@@ -78,9 +78,6 @@ export const MenuLinks = styled.div`
 
 export const MenuLink = styled.div`
   text-decoration: none;
-`;
-
-export const LinkName = styled.div`
 `;
 
 export const Menu_Bottom = styled.div`
@@ -92,8 +89,9 @@ export const Menu_Bottom = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: ${fonts.pri};
-  font-size: 2rem;
+  font-family: ${fonts.primary};
+  font-size: 1.5rem;
+  font-weight: 200;
   height: 60%;
   display: flex;
   flex-direction: column;
@@ -101,10 +99,3 @@ export const Title = styled.div`
   justify-content: center;
 `;
 
-export const Footer = styled.div`
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-`;

@@ -10,7 +10,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${Colors.Secondary};
-  opacity: 70%;
   position: sticky;
   top: 0;
 `;

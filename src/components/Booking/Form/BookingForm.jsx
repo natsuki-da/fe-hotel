@@ -3,7 +3,7 @@ import * as S from "./BookingForm.styles"
 import { useAuth } from "../../../context/useAuth";
 import BookingCalendar from "../Calendar/BookingCalendar";
 
-const BookingForm = ({onChange}) => {
+const BookingForm = ({ onChange, onSubmit }) => {
     const { room } = useAuth();
     const [userInfo, setUserInfo] = useState({
         guestFirstName: "",
@@ -18,7 +18,7 @@ const BookingForm = ({onChange}) => {
         setUserInfo({ ...userInfo, [name]: value });
         onChange({
             [name]: value
-          });
+        });
     }
 
     return (
@@ -28,11 +28,27 @@ const BookingForm = ({onChange}) => {
                     <h1>Payment and Guest Details</h1>
                     <S.PaymentContent>
                         <h2>Payment</h2>
+                        <S.RoomInfoSection>
+                    <S.PhotoContent>
+                        <S.Photo src={room.imageUrl} alt={room.type}/>
+                    </S.PhotoContent>
+                    <S.RoomInfoContent>
+                        <S.RoomInfo>
+                            <S.Large>{room.type}</S.Large><br/>
+                            <S.BoldLarge>{room.pricePerNight}</S.BoldLarge> SEK<br/>
+                            {room.description}
+                        </S.RoomInfo>
+                    </S.RoomInfoContent>
+                </S.RoomInfoSection>
                     </S.PaymentContent>
 
                     <S.GuestDetailContent>
                         <h2>Guest Information</h2>
-                        <S.GuestForm>
+                        <S.GuestForm id="booking-form"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                onSubmit();
+                            }}>
                             <S.InputField>
                                 <S.Label>First Name:</S.Label>
                                 <S.Input name="guestFirstName" value={userInfo.guestFirstName} type="text" required onChange={handleUserInfo} />
@@ -56,13 +72,6 @@ const BookingForm = ({onChange}) => {
                         </S.GuestForm>
                     </S.GuestDetailContent>
                 </S.GuestDetailsSection>
-
-                <S.RoomInfoSection>
-                    {room.imageUrl}
-                    {room.PerNight}
-                    {room.type}
-                    {room.description}
-                </S.RoomInfoSection>
             </S.FormWrapper>
         </S.Container>
     )

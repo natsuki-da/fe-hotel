@@ -14,29 +14,33 @@ export const Container = styled.div`
 
 export const RoomInfoWrapper = styled.div`
   width: 80%;
-  //height: 70%;
-  background-color: ${Colors.Secondary};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 `
 
 export const PhotoSection = styled.section`
   width: 100%;
-  height: 30rem;
-  background-color: #ffff;
+  height: 40rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `
-export const Photo = styled.img`
-  width: 100%;
-`
+  export const Photo = styled.img`
+   height: 100%;
+   `;
 
 export const DescriptionSection = styled.section`
-  background-color: ${Colors.Secondary};
   display: flex;
   flex-direction: column;
   padding-bottom: 2rem;
+  width: 80%;
 `
 
 export const RoomType = styled.h2`
-  background-color:  #ffff;
-  text-indent: 5rem;
+  text-indent: 2rem;
   font-family:  ${fonts.secondary};
   font-weight: 400;
   font-size: 2.5rem;
@@ -49,7 +53,10 @@ export const DescriptionContent = styled.div`
 
 export const Description = styled.div`
   width: 60%;
-  background-color: ${Colors.Secondary};
+  padding: 0 2rem;
+  font-family:  ${fonts.primary};
+  font-weight: 200;
+  font-size: 1rem;
 `
 
 export const Amenity_table = styled.table`
@@ -58,7 +65,6 @@ export const Amenity_table = styled.table`
   border: none;
   tr {
     height: 5rem;
-    //background-color: ${Colors.Tertiary};
     border-bottom: 0.1rem solid #000;
     display: flex;
     align-items: center;
@@ -79,22 +85,26 @@ export const ButtonSection = styled.section`
   padding: 3rem 0;
 `
 
-export const ButtonContainer = styled.div`
+export const Button = styled.button`
   width: 10rem;
   height: 3rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 0.1rem solid ${Colors.Tertiary};
-  background-color: ${Colors.Secondary};
-  &:hover {
-    background-color: ${Colors.Tertiary};
-    color: ${Colors.Primary}
-  }
-`;
 
-export const Button = styled.div`
-  font-family:  ${fonts.secondary};
+  font-family: ${fonts.secondary};
   font-size: 1.25rem;
   font-weight: 500;
+
+  background-color: transparent;
+  border: 0.1rem solid ${Colors.Tertiary};
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${Colors.Tertiary};
+    color: ${Colors.Primary};
+  }
 `;

@@ -10,7 +10,7 @@ const NavigationBar = () => {
         <>
             <S.Container>
                 <S.Header>
-                    <a href="/"><S.Title>Rikyu</S.Title></a>
+                    <a href="/"><S.Title>KYOTO GEM</S.Title></a>
                     <S.Button onClick={() => setIsOpen(true)}>
                         <S.Image src="../../icons/hamburger.svg" alt="menu icon" />
                     </S.Button>

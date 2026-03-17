@@ -40,30 +40,30 @@ const RoomDetail = () => {
                     <S.RoomType>{room.type}</S.RoomType>
                     <S.DescriptionContent>
                         <S.Description>{room.description}</S.Description>
-                       
-                            <S.Amenity_table>
-                                <tbody>
-                                    <tr>
-                                        <th>Room size </th>
-                                        <td>40m2</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Capacity</th>
-                                        <td>{room.capacity}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Amenities / Facilities</th>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </S.Amenity_table>
+
+                        <S.Amenity_table>
+                            <tbody>
+                                <tr>
+                                    <th>Room size </th>
+                                    <td>40m2</td>
+                                </tr>
+                                <tr>
+                                    <th>Capacity</th>
+                                    <td>{room.capacity}</td>
+                                </tr>
+                                <tr>
+                                    <th>Amenities / Facilities</th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </S.Amenity_table>
                     </S.DescriptionContent>
                 </S.DescriptionSection>
             </S.RoomInfoWrapper>
             <S.ButtonSection>
-                <S.ButtonContainer>
-                    <S.Button onClick={handleClick}>View</S.Button>
-                </S.ButtonContainer>
+                <S.Button onClick={handleClick}>
+                    View
+                </S.Button>
             </S.ButtonSection>
         </S.Container>
     )

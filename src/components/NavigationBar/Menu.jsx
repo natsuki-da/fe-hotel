@@ -9,7 +9,7 @@ const Menu = (props) => {
         <>
             {isOpen && <S.Overlay onClick={() => setIsOpen(false)} />}
 
-            <S.MenuContainer isOpen={isOpen}>
+            <S.MenuContainer $isOpen={isOpen}>
                 <S.Menu>
                     <S.Menu_Top>
                         <S.Button onClick={() => setIsOpen(false)}>
@@ -18,13 +18,12 @@ const Menu = (props) => {
                     </S.Menu_Top>
                     <S.Menu_Middle>
                         <S.MenuLinks>
-                            <S.MenuLink to="/">HOME</S.MenuLink>
-                            <S.MenuLink to="/room-list">Room</S.MenuLink>
+                            <S.MenuLink as={Link} to="/">HOME</S.MenuLink>
+                            <S.MenuLink as={Link} to="/room-list">Room</S.MenuLink>
                         </S.MenuLinks>
                     </S.Menu_Middle>
                     <S.Menu_Bottom>
-                        <S.Title>RIKYU</S.Title>
-                        <S.Footer></S.Footer>
+                        <S.Title>KYOTO GEM</S.Title>
                     </S.Menu_Bottom>
                 </S.Menu>
             </S.MenuContainer>
