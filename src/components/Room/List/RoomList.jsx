@@ -26,15 +26,12 @@ const RoomList = () => {
                 <S.TitleSection>
                     <h1>Hotel rooms</h1>
                 </S.TitleSection>
-                {
-                    rooms.map((room, index) => (
-                        <Link to={`/room/${room.roomId}`} key={room.roomId}>
-                            {index % 2 === 0
-                                ? <RoomCardRight room={room} />
-                                : <RoomCardLeft room={room} />}
-                        </Link>
-                    ))
-                }
+
+                {rooms.map((room, index) => (
+                    index % 2 === 0
+                        ? <RoomCardRight key={room.roomId} room={room} />
+                        : <RoomCardLeft key={room.roomId} room={room} />
+                ))}
             </S.Container>
         </>
     )

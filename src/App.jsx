@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { AuthProvider } from "./context/AuthProvider"
 import HomePage from "./components/Home/HomePage"
 import RoomDetail from "./components/Room/DetailPage/RoomDetail"
 import RoomList from "./components/Room/List/RoomList"
-import { AuthProvider } from "./context/AuthProvider"
-import BookingForm from "./components/Booking/Form/BookingForm"
-import BookingCalendar from "./components/Booking/Calendar/BookingCalendar"
 import BookingPage from "./components/Booking/Booking/BookingPage"
+import Layout from "./Layout"
+import BookingConfirmation from "./components/Booking/Booking/BookingConfirmation"
+import LayoutWithoutNav from "./LayoutWithoutNav"
 
 function App() {
 
@@ -13,14 +14,15 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/room-list" element={<RoomList />} />
-          <Route path="/room/:roomId" element={<RoomDetail />} />
-          <Route path="/room/:roomId/booking" element={<BookingPage />} />
-          {/* <Route path="calendar" element={<BookingCalendar />}/>
-          <Route path="booking" element={<BookingForm />}/> */}
-          {/* <Route path="room/:roomId/availability" element={<BookingCalendar />} />
-          <Route path="room/:roomId/booking" element={<BookingForm />}/> */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/room-list" element={<RoomList />} />
+            <Route path="/room/:roomId" element={<RoomDetail />} />
+            <Route path="/room/:roomId/booking" element={<BookingPage />} />
+          </Route>
+          <Route element={<LayoutWithoutNav />}>
+            <Route path="/booking/confirmation" element={<BookingConfirmation />}/>
+          </Route>
         </Routes>
       </AuthProvider>
     </BrowserRouter>

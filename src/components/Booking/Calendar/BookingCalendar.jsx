@@ -62,10 +62,10 @@ const BookingCalendar = ({onDateChange}) => {
                 min={1}
                 defaultMonth={currentMonth}
                 onMonthChange={handleMonthChange} />
-            {range.from && range.to && (
+            {/* {range.from && range.to && (
                 <p>Your checkin date: {range.from.toLocaleDateString()} <br />
                     Your checkout date: {range.to.toLocaleDateString()} </p>
-            )}
+            )} */}
         </S.Wrapper>
     )
 }

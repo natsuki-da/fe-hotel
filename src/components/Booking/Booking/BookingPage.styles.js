@@ -14,25 +14,28 @@ export const ButtonSection = styled.section`
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
-
 `
 
-export const ButtonContainer = styled.div`
+export const Button = styled.button`
   width: 10rem;
   height: 3rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 0.1rem solid ${Colors.Tertiary};
-  background-color: ${Colors.Secondary};
-  &:hover {
-    background-color: ${Colors.Tertiary};
-    color: ${Colors.Primary}
-  }
-`;
 
-export const Button = styled.div`
-  font-family:  ${fonts.secondary};
+  font-family: ${fonts.secondary};
   font-size: 1.25rem;
   font-weight: 500;
+
+  background-color: ${Colors.Secondary};
+  border: 0.1rem solid ${Colors.Tertiary};
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${Colors.Tertiary};
+    color: ${Colors.Primary};
+  }
 `;

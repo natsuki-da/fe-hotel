@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import * as S from "./RoomCardLeft.styles";
 
-const RoomCardLeft = ({room}) => {
+const RoomCardLeft = ({ room }) => {
     return (
         <S.CardContainer>
             <S.Card>
@@ -8,10 +9,17 @@ const RoomCardLeft = ({room}) => {
                     <S.Image src={room.imageUrl} alt={room.type} />
                 </S.Card_L>
                 <S.Card_R>
-                    <S.RoomType>{room.type}</S.RoomType>
-                    <S.Description>
-                        {room.description}
-                    </S.Description>
+                    <S.RoomSection>
+                        <S.RoomType>{room.type}</S.RoomType>
+                        <S.Description>
+                            {room.description}
+                        </S.Description>
+                    </S.RoomSection>
+                    <S.ButtonSection>
+                        <S.Button as={Link} to={`/room/${room.roomId}`}>
+                            View more
+                        </S.Button>
+                    </S.ButtonSection>
                 </S.Card_R>
             </S.Card>
         </S.CardContainer>
