@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
 import * as S from "./RoomDetail.styles"
 import { useNavigate, useParams } from "react-router-dom";
 import { getRoomById } from "../../../api/roomApi";
@@ -9,7 +9,7 @@ const RoomDetail = () => {
     const { room, setRoom } = useAuth();
     const { roomId } = useParams();
     const navigate = useNavigate();
-    
+
     const handleClick = () => {
         navigate(`/room/${roomId}/booking`)
     }
@@ -40,24 +40,31 @@ const RoomDetail = () => {
                     <S.RoomType>{room.type}</S.RoomType>
                     <S.DescriptionContent>
                         <S.Description>{room.description}</S.Description>
-                        <S.Amenity_table>
-                            <tbody>
-                                <tr>
-                                    <th>Capacity: </th>
-                                    <th>{room.capacity}</th>
-                                </tr>
-                                <tr>
-                                    <th>2</th>
-                                </tr>
-                                <tr>
-                                    <th>3</th>
-                                </tr>
-                            </tbody>
-                        </S.Amenity_table>
+                       
+                            <S.Amenity_table>
+                                <tbody>
+                                    <tr>
+                                        <th>Room size </th>
+                                        <td>40m2</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Capacity</th>
+                                        <td>{room.capacity}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Amenities / Facilities</th>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </S.Amenity_table>
                     </S.DescriptionContent>
                 </S.DescriptionSection>
-                <button onClick={handleClick}>BOOK</button>
             </S.RoomInfoWrapper>
+            <S.ButtonSection>
+                <S.ButtonContainer>
+                    <S.Button onClick={handleClick}>View</S.Button>
+                </S.ButtonContainer>
+            </S.ButtonSection>
         </S.Container>
     )
 }

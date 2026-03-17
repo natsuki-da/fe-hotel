@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { Colors } from "../../../styles/Global.styles";
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: rgba(214, 206, 188, 0.4);
-`
+  //height: 100vh;
+  background-color: ${Colors.Primary};
+`;
