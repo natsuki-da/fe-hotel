@@ -71,7 +71,7 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
   align-items: flex-end;
 
 `,yO=F.img`
-  width: 70%; 
+  width: 60%; 
   height: auto;
 `,gO=F.div`
   width: 100%;
