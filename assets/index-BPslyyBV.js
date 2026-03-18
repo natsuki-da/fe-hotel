@@ -207,7 +207,7 @@ Please change the parent <Route path="${B}"> to <Route path="${B==="/"?"*":`${B}
 `,yT=P.img`
  width: 100%;
  height: 25rem;
-`,gT=({room:n})=>k.jsx(rT,{children:k.jsxs(uT,{children:[k.jsx(mT,{children:n.images.map(l=>k.jsx(yT,{src:Uo(l),alt:n.type},l))}),k.jsxs(oT,{children:[k.jsxs(sT,{children:[k.jsx(cT,{children:n.type}),k.jsx(fT,{children:n.description})]}),k.jsx(dT,{children:k.jsx(hT,{as:Pl,to:`/room/${n.roomId}`,children:"View more"})})]})]})}),pT=P.div`
+`,gT=({room:n})=>k.jsx(rT,{children:k.jsxs(uT,{children:[k.jsx(mT,{children:k.jsx(yT,{src:Uo(n.imageUrl),alt:n.type})}),k.jsxs(oT,{children:[k.jsxs(sT,{children:[k.jsx(cT,{children:n.type}),k.jsx(fT,{children:n.description})]}),k.jsx(dT,{children:k.jsx(hT,{as:Pl,to:`/room/${n.roomId}`,children:"View more"})})]})]})}),pT=P.div`
   padding-left: 25%;
   padding-bottom: 6rem;
   overflow: hidden;
@@ -265,7 +265,7 @@ Please change the parent <Route path="${B}"> to <Route path="${B==="/"?"*":`${B}
 `,MT=P.img`
  width: 100%;
  height: 25rem;
-`,CT=({room:n})=>k.jsx(pT,{children:k.jsxs(vT,{children:[k.jsxs(bT,{children:[k.jsxs(ST,{children:[k.jsx(ET,{children:n.type}),k.jsx(OT,{children:n.description})]}),k.jsx(DT,{children:k.jsx(TT,{as:Pl,to:`/room/${n.roomId}`,children:"View more"})})]}),k.jsx(wT,{children:n.images.map(l=>k.jsx(MT,{src:Uo(l),alt:n.type},l))})]})}),xT=P.div`
+`,CT=({room:n})=>k.jsx(pT,{children:k.jsxs(vT,{children:[k.jsxs(bT,{children:[k.jsxs(ST,{children:[k.jsx(ET,{children:n.type}),k.jsx(OT,{children:n.description})]}),k.jsx(DT,{children:k.jsx(TT,{as:Pl,to:`/room/${n.roomId}`,children:"View more"})})]}),k.jsx(wT,{children:k.jsx(MT,{src:Uo(n.imageUrl),alt:n.type})})]})}),xT=P.div`
   background-color: ${we.Primary};
   padding-top: 6rem;
 `,RT=P.section`
