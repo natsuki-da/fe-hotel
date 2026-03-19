@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import * as S from "./RoomCardRight.styles";
+import { getImageUrl } from "../../../utils/imageHelper";
 
 const RoomCardRight = ({ room }) => {
     return (
@@ -19,7 +20,7 @@ const RoomCardRight = ({ room }) => {
                     </S.ButtonSection>
                 </S.Card_L>
                 <S.Card_R>
-                    <S.Image src={room.imageUrl} alt={room.type} />
+                    <S.Image src={getImageUrl(room.imageUrl)} alt={room.type} />
                 </S.Card_R>
             </S.Card>
         </S.CardContainer>

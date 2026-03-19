@@ -1,3 +1,4 @@
+import { getIconUrl } from "../../utils/imageHelper";
 import * as S from "./Menu.styles"
 import { Link } from "react-router-dom";
 
@@ -13,7 +14,7 @@ const Menu = (props) => {
                 <S.Menu>
                     <S.Menu_Top>
                         <S.Button onClick={() => setIsOpen(false)}>
-                            <S.Image src="../../icons/cross.png" />
+                            <S.Image src={getIconUrl('cross.png')} />
                         </S.Button>
                     </S.Menu_Top>
                     <S.Menu_Middle>
@@ -23,7 +24,7 @@ const Menu = (props) => {
                         </S.MenuLinks>
                     </S.Menu_Middle>
                     <S.Menu_Bottom>
-                        <S.Title>KYOTO GEM</S.Title>
+                        <S.Title>kyoto hideaway</S.Title>
                     </S.Menu_Bottom>
                 </S.Menu>
             </S.MenuContainer>

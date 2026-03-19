@@ -3,10 +3,11 @@ import BookingCalendar from "../Calendar/BookingCalendar";
 import BookingForm from "../Form/BookingForm";
 import * as S from "./BookingPage.styles"
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/useAuth";
 
 const BookingPage = () => {
     const navigate = useNavigate();
-
+    const {setBooking} = useAuth();
     const [bookingDetails, setBookingDetails] = useState({
         guestFirstName: "",
         guestLastName: "",
@@ -52,6 +53,7 @@ const BookingPage = () => {
           return;
         }
         localStorage.setItem("guest", JSON.stringify(bookingDetails));
+        setBooking(bookingDetails);
         navigate("/booking/confirmation");
       };
 
@@ -67,7 +69,7 @@ const BookingPage = () => {
                 <BookingCalendar onDateChange={handleDateChange} />
                 <S.ButtonSection>
                     <S.Button type="submit" form="booking-form" onClick={handleSubmit}>
-                        Review Your Reservation
+                        BOOK
                     </S.Button>
                 </S.ButtonSection>
             </S.Container>

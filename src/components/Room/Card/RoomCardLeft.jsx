@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import * as S from "./RoomCardLeft.styles";
+import { getImageUrl } from "../../../utils/imageHelper";
 
 const RoomCardLeft = ({ room }) => {
+
     return (
         <S.CardContainer>
             <S.Card>
                 <S.Card_L>
-                    <S.Image src={room.imageUrl} alt={room.type} />
+                   <S.Image src={getImageUrl(room.imageUrl)} alt={room.type} />
                 </S.Card_L>
                 <S.Card_R>
                     <S.RoomSection>

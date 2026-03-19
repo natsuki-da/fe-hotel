@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as S from "./BookingForm.styles"
 import { useAuth } from "../../../context/useAuth";
-import BookingCalendar from "../Calendar/BookingCalendar";
+import { getImageUrl } from "../../../utils/imageHelper";
 
 const BookingForm = ({ onChange, onSubmit }) => {
     const { room } = useAuth();
@@ -29,17 +29,20 @@ const BookingForm = ({ onChange, onSubmit }) => {
                     <S.PaymentContent>
                         <h2>Payment</h2>
                         <S.RoomInfoSection>
-                    <S.PhotoContent>
-                        <S.Photo src={room.imageUrl} alt={room.type}/>
-                    </S.PhotoContent>
-                    <S.RoomInfoContent>
-                        <S.RoomInfo>
-                            <S.Large>{room.type}</S.Large><br/>
-                            <S.BoldLarge>{room.pricePerNight}</S.BoldLarge> SEK<br/>
-                            {room.description}
-                        </S.RoomInfo>
-                    </S.RoomInfoContent>
-                </S.RoomInfoSection>
+                            <S.PhotoContent>
+                                <S.Photo
+                                    src={room?.imageUrl ? getImageUrl(room.imageUrl) : getImageUrl('restaurang.JPG')}
+                                    alt={room?.type || 'room'}
+                                />
+                            </S.PhotoContent>
+                            <S.RoomInfoContent>
+                                <S.RoomInfo>
+                                    <S.Large>{room.type}</S.Large><br />
+                                    <S.BoldLarge>{room.pricePerNight}</S.BoldLarge> SEK/night<br />
+                                    {room.description}
+                                </S.RoomInfo>
+                            </S.RoomInfoContent>
+                        </S.RoomInfoSection>
                     </S.PaymentContent>
 
                     <S.GuestDetailContent>

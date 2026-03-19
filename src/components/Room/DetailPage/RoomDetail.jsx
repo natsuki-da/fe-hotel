@@ -3,6 +3,8 @@ import * as S from "./RoomDetail.styles"
 import { useNavigate, useParams } from "react-router-dom";
 import { getRoomById } from "../../../api/roomApi";
 import { useAuth } from "../../../context/useAuth";
+import { getImageUrl } from "../../../utils/imageHelper";
+
 
 
 const RoomDetail = () => {
@@ -34,7 +36,10 @@ const RoomDetail = () => {
         <S.Container>
             <S.RoomInfoWrapper>
                 <S.PhotoSection>
-                    <S.Photo src={room.imageUrl} alt={room.type} />
+                    <S.Photo
+                        src={room?.imageUrl ? getImageUrl(room.imageUrl) : getImageUrl('restaurang.JPG')}
+                        alt={room?.type || 'room'}
+                    />
                 </S.PhotoSection>
                 <S.DescriptionSection>
                     <S.RoomType>{room.type}</S.RoomType>

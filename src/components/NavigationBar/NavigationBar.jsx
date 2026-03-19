@@ -1,6 +1,7 @@
 import { useState } from "react"
 import * as S from "./NavigationBar.styles"
 import Menu from "./Menu";
+import { getIconUrl } from "../../utils/imageHelper";
 
 
 const NavigationBar = () => {
@@ -10,9 +11,9 @@ const NavigationBar = () => {
         <>
             <S.Container>
                 <S.Header>
-                    <a href="/"><S.Title>KYOTO GEM</S.Title></a>
+                    <a href="/"><S.Title>kyoto hideaway</S.Title></a>
                     <S.Button onClick={() => setIsOpen(true)}>
-                        <S.Image src="../../icons/hamburger.svg" alt="menu icon" />
+                        <S.Image src={getIconUrl('hamburger.svg')} alt="menu icon" />
                     </S.Button>
                 </S.Header>
             </S.Container>

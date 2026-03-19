@@ -1,12 +1,12 @@
 {
   "name": "fe-hotel",
-  "homepage": "https://natsuki-da.github.io/fe-hotel",
+  "homepage": "https://github.com/natsuki-da/fe-hotel.git",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist -r https://github.com/natsuki-da/fe-hotel.git",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
